@@ -11,15 +11,20 @@
 
   <meta name="viewport" content="width=device-width">
 
-  <?php 
-	  $cs = Yii::app()->getClientScript();
-	  //javascript
-	  $cs->registerScriptFile(Yii::app()->baseUrl .'/js/libs/modernizr-2.5.3.js');
-	  $cs->registerScriptFile(Yii::app()->baseUrl .'/js/libs/paper.js');
-	  $cs->registerScriptFile('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js');
+	<?php 
+		$cs = Yii::app()->getClientScript();
+		//javascript
+		$cs->registerScriptFile(Yii::app()->baseUrl .'/js/libs/modernizr-2.5.3.js');
+		$cs->registerScriptFile(Yii::app()->baseUrl .'/js/libs/paper.js');
+		$cs->registerScriptFile('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js');
+	?>
+
+	<?php
 	  //css
 	  $cs->registerCssFile(Yii::app()->baseUrl .'/css/style.css'); 
-  ?>
+
+	?>
+  
 
 </head>
 
@@ -66,7 +71,13 @@
 
 		</nav>
 
-		<?php echo $content; ?>
+		<div class="map-container">
+			
+			<canvas id="themap" width="960" height="570"></canvas>
+
+		</div>
+
+		<?php /*echo $content;*/ ?>
 
   	</div>
 
@@ -75,6 +86,6 @@
   	</footer>
 
 </div><!-- page -->
-
+<script type="text/paperscript" canvas="themap" src="<?php echo Yii::app()->baseUrl; ?>/js/cfi.js"></script>
 </body>
 </html>
