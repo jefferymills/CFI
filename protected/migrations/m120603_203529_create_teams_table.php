@@ -15,11 +15,15 @@ class m120603_203529_create_teams_table extends CDbMigration
 			'conference' => 'string NOT NULL',
 			'primary_color' => 'varchar(20) NOT NULL',
 			'second_color' => 'varchar(20)',
-			'x-position' => 'integer(4) NOT NULL',
-			'y-position' => 'integer(4) NOT NULL',
-			'national_championships' => 'integer(4) DEFAULT 0',
+			'x_position' => 'integer(4) NOT NULL',
+			'y_position' => 'integer(4) NOT NULL',
+			'national_championships' => 'integer(4)',
 			'stadium_capacity' => 'integer(7) NOT NULL',
-			'winning_percentage' => 'float'
+			'winning_percentage' => 'float NOT NULL',
+			'top_5' => 'integer(5)',
+			'top_10' => 'integer(5)',
+			'top_25' => 'integer(5)',
+			'heismans' => 'integer(5)'
 		));
 	}
 

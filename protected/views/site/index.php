@@ -1,16 +1,25 @@
-<?php $this->pageTitle=Yii::app()->name; ?>
+<div role="main">
+<?php print_r($team); ?>
+		<nav>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+			<button type="button" class="nav-button"></button>
+			
+			<ul>
+				<li>National Championships</li>
+				<li>Top 10 Finishes</li>
+				<li>Total Winning Percentage</li>
+				<li>BCS Bowl Wins</li>
+				<li>Annual Revenue</li>
+				<li class="current">Stadium Capacity</li>
+				<li>Top 25 Finishes</li>
+			</ul>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+		</nav>
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <tt><?php echo __FILE__; ?></tt></li>
-	<li>Layout file: <tt><?php echo $this->getLayoutFile('main'); ?></tt></li>
-</ul>
+		<div class="map-container">
+			
+			<canvas id="themap" width="960" height="570"></canvas>
 
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+		</div>
+
+</div>

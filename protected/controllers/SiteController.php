@@ -29,7 +29,14 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$team=Team::model()->findAll();
+		$this->render('index',array('team'=>$team));
+	}
+
+	public function actionDots(){
+		$teams=Team::model()->findAll();
+		header('Content-type: application/json');
+    	echo CJSON::encode($teams);
 	}
 
 	/**

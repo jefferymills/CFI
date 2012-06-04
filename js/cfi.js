@@ -2,9 +2,9 @@ var CFI = CFI || {};
 
 CFI.init = function(){
 	CFI.addMap();
-	var Dots = new CFI.addDots();
 
-	console.log(Dots.path);
+	$('.logo').bind('click',function(){CFI.getDots('heismans')});
+	var Dots = new CFI.addDots();
 
 	return Dots;
 
@@ -17,7 +17,7 @@ CFI.addMap = function(){
 	raster.position = view.center;
 };
 
-CFI.addDots = function(){
+CFI.addDots = function(teams){
 	this.path = [];
 	for (var i = 100 - 1; i >= 0; i--) {
 	
@@ -31,11 +31,16 @@ CFI.addDots = function(){
 	};
 	    
 }
-//North 49°00′08.6″N 122°15′40″W 
-//South 24°31′15″N 81°57′49″W) 
-//East 44.817419°N 66.949895°W
-//West 48°11.1′N 124°47.1′W)
-//$(document).ready(function(){CFI.init();});
+
+CFI.getDots = function(category){
+	$.ajax({
+		url: 'index.php/dots/category',
+		dataType: 'json',
+		success: function(data){
+			console.log(data);
+		}
+	})
+};
 
 var Dots = CFI.init();
 
