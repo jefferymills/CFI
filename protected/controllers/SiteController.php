@@ -34,10 +34,17 @@ class SiteController extends Controller
 	}
 
 	public function actionDots(){
-		$teams=Team::model()->findAll();
+		$category = Yii::app()->request->getQuery('category');
+		$teams = Yii::app()->db->createCommand()
+	    ->select('short_name, city, state, primary_color, second_color, x_position, y_position,' . $category .' cat')
+	    ->from('teams')
+	    ->order($category . ' asc')
+	    ->queryAll();
+		//$teams=Team::model()->findAll();
+		//$teams['category'] = Yii::app()->request->getQuery('category');
+		//print_r($_GET['category']);
 		header('Content-type: application/json');
-    	echo CJSON::encode($teams);
-	}
+    	echo CJSON::encode($teams); }
 
 	/**
 	 * This is the action to handle external exceptions.

@@ -53,7 +53,7 @@ class Team extends CActiveRecord
 			array('x_position, y_position, national_championships, stadium_capacity, top_5, top_10, top_25, heismans', 'numerical', 'integerOnly'=>true),
 			array('winning_percentage', 'numerical'),
 			array('name, city, conference', 'length', 'max'=>255),
-			array('short_name', 'length', 'max'=>6),
+			array('short_name', 'length', 'max'=>255),
 			array('state', 'length', 'max'=>2),
 			array('primary_color, second_color', 'length', 'max'=>20),
 			// The following rule is used by search().

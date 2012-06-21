@@ -1,5 +1,4 @@
 <div role="main">
-<?php print_r($team); ?>
 		<nav>
 
 			<button type="button" class="nav-button"></button>
