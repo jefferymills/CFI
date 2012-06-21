@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 21, 2012 at 02:47 AM
+-- Generation Time: Jun 21, 2012 at 03:11 AM
 -- Server version: 5.5.20
 -- PHP Version: 5.3.10
 
@@ -19,27 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `cfi`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_migration`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_migration` (
-  `version` varchar(255) NOT NULL,
-  `apply_time` int(11) DEFAULT NULL,
-  PRIMARY KEY (`version`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_migration`
---
-
-INSERT INTO `tbl_migration` (`version`, `apply_time`) VALUES
-('m000000_000000_base', 1338770900),
-('m120603_203529_create_teams_table', 1338777306),
-('m120611_021937_update_short_name_column', 1339381691);
 
 -- --------------------------------------------------------
 
