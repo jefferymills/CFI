@@ -31,12 +31,13 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 		$team=Team::model()->findAll();
 		$this->render('index',array('team'=>$team));
+		$this->renderPartial('teamModal');
 	}
 
 	public function actionDots(){
 		$category = Yii::app()->request->getQuery('category');
 		$teams = Yii::app()->db->createCommand()
-	    ->select('short_name, city, state, primary_color, second_color, x_position, y_position,' . $category .' cat')
+	    ->select('id, conference, short_name, city, state, primary_color, second_color, x_position, y_position,' . $category .' cat')
 	    ->from('teams')
 	    ->order($category . ' asc')
 	    ->queryAll();
@@ -44,7 +45,8 @@ class SiteController extends Controller
 		//$teams['category'] = Yii::app()->request->getQuery('category');
 		//print_r($_GET['category']);
 		header('Content-type: application/json');
-    	echo CJSON::encode($teams); }
+    	echo CJSON::encode($teams); 
+    }
 
 	/**
 	 * This is the action to handle external exceptions.

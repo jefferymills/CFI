@@ -119,9 +119,59 @@ html {
 			padding: 50px 0;
 
 			#themap {
-
+				background: url(../images/map.png) center no-repeat;
 			}
 		}
+	}
+
+	.team_modal {
+		position: absolute;
+		opacity: 0;
+		#hl.transition(opacity, 0.2s, linear);
+		width: 170px;
+		height: 145px;
+		border: 2px solid #fff;
+		#hl.round-all-corners(3px);
+		background: rgba(256,256,256,0.9);
+		-webkit-box-shadow:  0px 0px 7px 1px rgba(0, 0, 0, 0.3);
+        box-shadow:  0px 0px 7px 1px rgba(0, 0, 0, 0.3);
+
+        .team_info {
+        	padding: 5px;
+        	color: #fff;
+        	background: #000;
+        	#hl.clearfix();
+
+        	h1 {
+        		font-size: 29px;
+        		margin-bottom: 3px;
+        	}
+
+        	p.team_location {
+        		font-size: 10px;
+        		font-family: Arial, Helvetica, sans-serif;
+        		float: left;
+
+        	}
+
+        	p.team_conference {
+        		font-size: 10px;
+        		font-family: Arial, Helvetica, sans-serif;
+        		float: right;
+        	}
+        }
+
+        .category_number {
+        	font-size: 55px;
+        	text-align: center;
+        	padding: 20px 0;
+        	color: @dark-text;
+        }
+
+	}
+
+	.visible {
+		opacity: 1;
 	}
 
 }
