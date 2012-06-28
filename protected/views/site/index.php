@@ -15,7 +15,7 @@
 
 		</nav>
 
-		<div class="map-container">
+		<div class="map-container hide-map-container">
 			
 			<canvas id="themap" width="960" height="570"></canvas>
 

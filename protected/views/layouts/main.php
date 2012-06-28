@@ -37,13 +37,13 @@
 
 		<div class="top-bar"></div>
 
-		<div class="logo">
+		<div class="logo hide_logo">
 
-			<h1><?php echo CHtml::encode($this->pageTitle); ?></h1>
+			<h1>College Football Infographic</h1>
 
 		</div>
 
-		<div class="map-title">
+		<div class="map-title hide-map-title">
 			
 			<h2>Stadium Capacity</h2>
 

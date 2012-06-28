@@ -56,8 +56,13 @@ html {
 			background: @primary-color;
 			color: #fff;
 			font-size: 48px;
-			padding: 20px 15px 20px 20px;
+			padding: 20px;
 			margin-left: -2px;
+			#hl.transition(margin, 0.5s, linear, 1s);
+		}
+
+		.hide_logo {
+			margin-left: -415px;
 		}
 
 		.map-title {
@@ -65,11 +70,16 @@ html {
 			text-align: right;
 			font-size: 18px;
 			padding: 20px;
+			#hl.transition(opacity, 1s, linear, 2s);
 
 			h2 {
 				font-size: 48px;
 				margin-bottom: 5px;
 			}
+		}
+
+		.hide-map-title {
+			opacity: 0;
 		}
 	}
 
@@ -83,12 +93,23 @@ html {
 				background: url(../images/nav-arrows.png) no-repeat center center @primary-color;
 				height: 29px;
 				width: 34px;
+				margin-left: -4px;
+				#hl.transition(margin, 0.1s, linear);
+			}
+
+			.nav-button:hover {
 				margin-left: -2px;
 			}
 
+			.nav-button.hide {
+				margin-left: -34px;
+			}
+
+
 			ul {
 				margin-top: 15px;
-				margin-left: -232px;
+				/*margin-left: -232px;*/
+				#hl.transition(margin, 1s, linear);
 
 				li {
 					.box-style();
@@ -99,6 +120,12 @@ html {
 					font-size: 24px;
 					margin: 0 0 8px -2px;
 					cursor: pointer;
+					#hl.rotateY();
+					-webkit-transform-origin: 0%;
+					-moz-transform-origin: 0%;
+					-o-transform-origin: 0%;
+					-ms-transform-origin: 0%;
+					transform-origin: 0%;
 
 				}
 
@@ -110,17 +137,39 @@ html {
 					box-shadow: none;
 					cursor: default;
 				}
+
+				li:nth-child(1) {#hl.transition(all, 0.3s, linear);}
+				li:nth-child(2) {#hl.transition(all, 0.3s, linear, 0.1s);}
+				li:nth-child(3) {#hl.transition(all, 0.3s, linear, 0.2s);}
+				li:nth-child(4) {#hl.transition(all, 0.3s, linear, 0.3s);}
+				li:nth-child(5) {#hl.transition(all, 0.3s, linear, 0.4s);}
+				li:nth-child(6) {#hl.transition(all, 0.3s, linear, 0.5s);}
+				li:nth-child(7) {#hl.transition(all, 0.3s, linear, 0.6s);}
 			}
+
+			.show {
+				margin-left: 0;
+
+				li {
+					#hl.rotateY(0);
+				}
+			}
+
 		}
 
 		.map-container {
 			width: 960px;
 			margin: 0 auto;
-			padding: 50px 0;
+			padding: 10px 0;
+			#hl.transition(opacity, 1s, linear);
 
 			#themap {
 				background: url(../images/map.png) center no-repeat;
 			}
+		}
+
+		.hide-map-container {
+			opacity: 0;
 		}
 	}
 

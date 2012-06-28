@@ -101,7 +101,7 @@ function onMouseMove(event){
 		}
 	}
 
-var growth = 1.03;
+var growth = 1.1;
 function onFrame(event){
 	if(CFI.dots){
 		for (var i = CFI.dots.path.length - 1; i >= 0; i--) {
@@ -130,4 +130,12 @@ $(document).ready(function(){
       window.mouseXPos = e.pageX;
       window.mouseYPos = e.pageY;
    }); 
+
+   $('.logo').removeClass('hide_logo');
+   $('.map-title').removeClass('hide-map-title');
+   $('.map-container').removeClass('hide-map-container');
+   $('.nav-button').click(function(){
+   		$('nav ul').toggleClass('show');
+   		$(this).toggleClass('hide');
+   });
 });
