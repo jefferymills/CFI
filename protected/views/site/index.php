@@ -4,13 +4,13 @@
 			<button type="button" class="nav-button"></button>
 			
 			<ul>
-				<li>National Championships</li>
-				<li>Top 10 Finishes</li>
-				<li>Total Winning Percentage</li>
-				<li>BCS Bowl Wins</li>
-				<li>Annual Revenue</li>
-				<li class="current">Stadium Capacity</li>
-				<li>Top 25 Finishes</li>
+				<li id="national_championships">National Championships</li>
+				<li id="top_10_finishes">Top 10 Finishes</li>
+				<li id="total_winning_percentage">Total Winning Percentage</li>
+				<li id="bcs_bowl_wins">BCS Bowl Wins</li>
+				<li id="heismans">Heismans</li>
+				<li class="current" id="stadium_capacity">Stadium Capacity</li>
+				<li id="top_25_finishes">Top 25 Finishes</li>
 			</ul>
 
 		</nav>

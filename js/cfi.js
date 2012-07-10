@@ -2,14 +2,16 @@ var CFI = CFI || {};
 
 CFI.init = function(){
 	//CFI.addMap();
-	CFI.getDots('stadium_capacity', function(data){
+	CFI.getDots('national_championships', function(data){
 		CFI.dots = new CFI.addDots(data);
 		//console.log(CFI.dots);
 	});
 
 	//console.log(dots);
 
-	$('.logo').bind('click',function(){CFI.getDots('heismans')});
+	$('nav ul li').bind('click',function(){CFI.getDots($(this).attr('id'), function(data){
+		console.log(CFI);
+	})});
 
 	return CFI.dots;
 
@@ -31,7 +33,11 @@ CFI.addDots = function(teams){
 		    this.path[i].fillColor = '#' + teams[i].primary_color;
 		    /*this.path[i].strokeWidth = 2;
 		    this.path[i].strokeColor = '#' + teams[i].second_color;*/
-		    this.path[i].opacity = 0.8;
+		    if(teams[i].cat < 1){
+		    	this.path[i].opacity = 0;
+		    }else{
+		    	this.path[i].opacity = 0.8;
+			}
 		    this.path[i].newSize = CFI.getSize(teams[i], teams);
 		    this.path[i].teamid = teams[i].id;
 		    this.path[i].team = teams[i];
@@ -73,35 +79,40 @@ function onMouseMove(event){
 					//CFI.dots.path[i].scale(0.5);
 					//console.log('cool');
 					//document.body.style.cursor = 'pointer';
-					CFI.dots.path[i].opacity = 1;
-					var modalX = 15;
-					if(window.mouseXPos > ($(document).width()/2) - 70){
-						modalX = -185;
-					}
-					$('.team_modal').attr('id', 'team' + i ).css({
-						left: window.mouseXPos + modalX,
-						top: window.mouseYPos - 160,
-						borderBottom: '5px solid #' + CFI.dots.path[i].team.second_color
-					}).addClass('visible');
+					if(CFI.dots.path[i].team.cat > 0){
+							CFI.dots.path[i].opacity = 1;
+						
+						var modalX = 15;
+						if(window.mouseXPos > ($(document).width()/2) - 70){
+							modalX = -185;
+						}
+						$('.team_modal').attr('id', 'team' + i ).css({
+							left: window.mouseXPos + modalX,
+							top: window.mouseYPos - 160,
+							borderBottom: '5px solid #' + CFI.dots.path[i].team.second_color
+						}).addClass('visible');
 
-					$('.team_info').css('backgroundColor', '#' + CFI.dots.path[i].team.primary_color);
-					$('.team_name').html(CFI.dots.path[i].team.short_name);
-					$('.team_location').html(CFI.dots.path[i].team.city + ', ' + CFI.dots.path[i].team.state);
-					$('.team_conference').html(CFI.dots.path[i].team.conference);
-					$('.category_number').html(addCommas(CFI.dots.path[i].team.cat));
-					selected = 1;
+						$('.team_info').css('backgroundColor', '#' + CFI.dots.path[i].team.primary_color);
+						$('.team_name').html(CFI.dots.path[i].team.short_name);
+						$('.team_location').html(CFI.dots.path[i].team.city + ', ' + CFI.dots.path[i].team.state);
+						$('.team_conference').html(CFI.dots.path[i].team.conference);
+						$('.category_number').html(addCommas(CFI.dots.path[i].team.cat));
+						selected = 1;
+					}
 					//break;
 				} else {
 					//console.log('no');
 					//document.body.style.cursor = 'default';
-					CFI.dots.path[i].opacity = 0.8;
+					if(CFI.dots.path[i].team.cat > 0){
+						CFI.dots.path[i].opacity = 0.8;
+					}
 					$('#team' + i).removeClass('visible');
 				}
 			};
 		}
 	}
 
-var growth = 1.1;
+var growth = 1.05;
 function onFrame(event){
 	if(CFI.dots){
 		for (var i = CFI.dots.path.length - 1; i >= 0; i--) {
@@ -137,5 +148,13 @@ $(document).ready(function(){
    $('.nav-button').click(function(){
    		$('nav ul').toggleClass('show');
    		$(this).toggleClass('hide');
+   });
+
+   $('nav ul li').click(function(){
+   		$('.map-title h2').html($(this).html());
+   		$('nav ul li').removeClass('current');
+   		$(this).addClass('current');
+   		$('nav ul').toggleClass('show');
+   		$('.nav-button').toggleClass('hide');
    });
 });

@@ -58,7 +58,7 @@ html {
 			font-size: 48px;
 			padding: 20px;
 			margin-left: -2px;
-			#hl.transition(margin, 0.5s, linear, 1s);
+			#hl.transition(margin, 0.5s, ease, 1s);
 		}
 
 		.hide_logo {
@@ -70,7 +70,7 @@ html {
 			text-align: right;
 			font-size: 18px;
 			padding: 20px;
-			#hl.transition(opacity, 1s, linear, 2s);
+			#hl.transition(opacity, 1s, linear, 1.5s);
 
 			h2 {
 				font-size: 48px;
@@ -86,7 +86,8 @@ html {
 	div[role="main"] {
 
 		nav {
-			float: left;
+			position: absolute;
+			left: 0;
 
 			.nav-button {
 				.box-style();
@@ -110,6 +111,11 @@ html {
 				margin-top: 15px;
 				/*margin-left: -232px;*/
 				#hl.transition(margin, 1s, linear);
+				-webkit-perspective: 600;
+				-moz-perspective: 600;
+				-o-perspective: 600;
+				-ms-perspective: 600;
+				perspective: 600;
 
 				li {
 					.box-style();
@@ -120,7 +126,7 @@ html {
 					font-size: 24px;
 					margin: 0 0 8px -2px;
 					cursor: pointer;
-					#hl.rotateY();
+					#hl.rotateY(110deg);
 					-webkit-transform-origin: 0%;
 					-moz-transform-origin: 0%;
 					-o-transform-origin: 0%;
@@ -138,13 +144,61 @@ html {
 					cursor: default;
 				}
 
-				li:nth-child(1) {#hl.transition(all, 0.3s, linear);}
-				li:nth-child(2) {#hl.transition(all, 0.3s, linear, 0.1s);}
-				li:nth-child(3) {#hl.transition(all, 0.3s, linear, 0.2s);}
-				li:nth-child(4) {#hl.transition(all, 0.3s, linear, 0.3s);}
-				li:nth-child(5) {#hl.transition(all, 0.3s, linear, 0.4s);}
-				li:nth-child(6) {#hl.transition(all, 0.3s, linear, 0.5s);}
-				li:nth-child(7) {#hl.transition(all, 0.3s, linear, 0.6s);}
+				li:nth-child(1) {
+					-webkit-transition: all 0.4s ease 0.1s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-moz-transition: all 0.4s ease 0.1s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-o-transition: all 0.4s ease 0.1s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-ms-transition: all 0.4s ease 0.1s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					transition: all 0.4s ease 0.1s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+				}
+				li:nth-child(2) {
+					-webkit-transition: all 0.4s ease 0.2s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-moz-transition: all 0.4s ease 0.2s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-o-transition: all 0.4s ease 0.2s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-ms-transition: all 0.4s ease 0.2s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					transition: all 0.4s ease 0.2s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+				}
+				li:nth-child(3) {
+					-webkit-transition: all 0.4s ease 0.3s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-moz-transition: all 0.4s ease 0.3s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-o-transition: all 0.4s ease 0.3s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-ms-transition: all 0.4s ease 0.3s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					transition: all 0.4s ease 0.3s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+				}
+				li:nth-child(4) {
+					-webkit-transition: all 0.4s ease 0.4s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-moz-transition: all 0.4s ease 0.4s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-o-transition: all 0.4s ease 0.4s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-ms-transition: all 0.4s ease 0.4s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					transition: all 0.4s ease 0.4s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+				}
+				li:nth-child(5) {
+					-webkit-transition: all 0.4s ease 0.5s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-moz-transition: all 0.4s ease 0.5s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-o-transition: all 0.4s ease 0.5s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-ms-transition: all 0.4s ease 0.5s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					transition: all 0.4s ease 0.5s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+				}
+				li:nth-child(6) {
+					-webkit-transition: all 0.4s ease 0.6s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-moz-transition: all 0.4s ease 0.6s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-o-transition: all 0.4s ease 0.6s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-ms-transition: all 0.4s ease 0.6s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					transition: all 0.4s ease 0.6s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+				}
+				li:nth-child(7) {
+					-webkit-transition: all 0.4s ease 0.7s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-moz-transition: all 0.4s ease 0.7s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-o-transition: all 0.4s ease 0.7s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					-ms-transition: all 0.4s ease 0.7s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+					transition: all 0.4s ease 0.7s, background-color 0.3s linear 0s, color 0.3s linear 0s;
+				}
+				/*li:nth-child(2) {#hl.transition(-webkit-transition, 0.4s, ease, 0.1s);}
+				li:nth-child(3) {#hl.transition(-webkit-transition, 0.4s, ease, 0.2s);}
+				li:nth-child(4) {#hl.transition(-webkit-transition, 0.4s, ease, 0.3s);}
+				li:nth-child(5) {#hl.transition(-webkit-transition, 0.4s, ease, 0.4s);}
+				li:nth-child(6) {#hl.transition(-webkit-transition, 0.4s, ease, 0.5s);}
+				li:nth-child(7) {#hl.transition(-webkit-transition, 0.4s, ease, 0.6s);}*/
 			}
 
 			.show {
