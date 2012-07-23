@@ -60,6 +60,6 @@
   	</footer>
 
 </div><!-- page -->
-<script type="text/paperscript" canvas="themap" src="<?php echo Yii::app()->baseUrl; ?>/js/cfi2.js"></script>
+<script type="text/paperscript" canvas="themap" src="<?php echo Yii::app()->baseUrl; ?>/js/cfi.js"></script>
 </body>
 </html>

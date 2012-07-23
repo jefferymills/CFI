@@ -1,24 +1,35 @@
-var CFI = CFI || {};
+(function(){
 
-CFI.init = function(){
-	CFI.getTeams('heismans', function(teams){
-		CFI.teams = teams;
-	});
-};
+	var cfi = window.cfi = {
 
-CFI.team = function(options){
+		defaults: {
+			category: 'stadium_capacity'
+		},
 
-};
+		teams: [],
 
-CFI.getTeams = function(category, callback){
-	var teams;
-	$.ajax({
-		url: 'index.php/site/dots?category=' + category,
-		dataType: 'json',
-		success: function(data){
-			callback(data);
+
+		getDots: function(category, callback){
+
+			var category = category || this.defaults.category;
+
+			var callback = function(data){
+				this.cfi.teams = data;
+			};
+
+			$.ajax({
+				url: 'index.php/site/dots?category=' + category,
+				dataType: 'json',
+				success: function(data){
+					callback(data);
+				}
+			});
+
 		}
-	});
-};
 
-CFI.init();
+	};
+
+})();
+
+console.log(cfi.getDots());
+console.log(cfi.teams);

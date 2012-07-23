@@ -1,8 +1,10 @@
 var CFI = CFI || {};
 
+var category = 'stadium_capacity';
+
 CFI.init = function(){
 	//CFI.addMap();
-	CFI.getDots('national_championships', function(data){
+	CFI.getDots(category, function(data){
 		CFI.dots = new CFI.addDots(data);
 		//console.log(CFI.dots);
 	});
@@ -10,7 +12,7 @@ CFI.init = function(){
 	//console.log(dots);
 
 	$('nav ul li').bind('click',function(){CFI.getDots($(this).attr('id'), function(data){
-		console.log(CFI);
+		
 	})});
 
 	return CFI.dots;
@@ -48,10 +50,24 @@ CFI.addDots = function(teams){
 }
 
 CFI.getSize = function(team, teams){
+
+	if(category === 'winning_percentage'){
+
+		var most = teams[teams.length -1].cat,
+			current = team.cat,
+			least = teams[0].cat,
+			size = ((current - least) * 60 + 5);
+
+	} else {
+
 	var most = teams[teams.length - 1].cat,
 		current = team.cat,
 		least = teams[0].cat,
 		size = (((current - least)/most) * 45) + 5;
+
+	}
+
+	console.log(category);
 
 	return size;
 }
@@ -96,7 +112,14 @@ function onMouseMove(event){
 						$('.team_name').html(CFI.dots.path[i].team.short_name);
 						$('.team_location').html(CFI.dots.path[i].team.city + ', ' + CFI.dots.path[i].team.state);
 						$('.team_conference').html(CFI.dots.path[i].team.conference);
-						$('.category_number').html(addCommas(CFI.dots.path[i].team.cat));
+						if(category === 'winning_percentage'){
+							var num = CFI.dots.path[i].team.cat.toString();
+							num = num.slice(2,4) + '%';
+							$('.category_number').html(num);
+						} else {
+							$('.category_number').html(addCommas(CFI.dots.path[i].team.cat));
+						}
+						
 						selected = 1;
 					}
 					//break;
@@ -156,5 +179,13 @@ $(document).ready(function(){
    		$(this).addClass('current');
    		$('nav ul').toggleClass('show');
    		$('.nav-button').toggleClass('hide');
+   		category = $(this).attr('id');
+   		CFI.getDots(category, function(data){
+   			for (var i = CFI.dots.path.length - 1; i >= 0; i--) {
+   				CFI.dots.path[i].remove();
+   			};
+   			CFI.dots = new CFI.addDots(data);
+   		});
    });
+
 });
