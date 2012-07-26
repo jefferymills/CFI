@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 25, 2012 at 01:12 AM
+-- Generation Time: Jul 26, 2012 at 05:24 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `teams` (
 INSERT INTO `teams` (`id`, `name`, `short_name`, `city`, `state`, `conference`, `primary_color`, `second_color`, `x_position`, `y_position`, `national_championships`, `stadium_capacity`, `winning_percentage`, `top_5`, `top_10`, `top_25`, `heismans`) VALUES
 (1, 'Brigham Young University', 'BYU', 'Provo', 'UT', 'Independant', '002E5D', 'FFFFFF', 228, 231, 1, 63725, 0.57465, NULL, NULL, NULL, 1),
 (2, 'Southern Methodist University', 'SMU', 'Dallas', 'TX', 'Conference USA', 'E31836', '005CAA', 489, 407, 3, 32000, 0.48, NULL, NULL, NULL, 1),
-(3, 'Penn State University', 'Penn State', 'University Park', 'PA', 'BIG 10', '090B44', 'FFFFFF', 781, 197, NULL, 107282, 0, NULL, NULL, NULL, 1),
+(3, 'Penn State University', 'Penn State', 'University Park', 'PA', 'BIG 10', '090B44', 'FFFFFF', 781, 197, NULL, 107282, 0.69, NULL, NULL, NULL, 1),
 (4, 'University of Utah', 'Utah', 'Salt Lake City', 'UT', 'PAC 12', 'cc0000', '000000', 221, 220, 0, 45017, 0.59, NULL, NULL, NULL, 0),
 (5, 'University of Idaho', 'Idaho', 'Moscow', 'ID', 'WAC', 'B18E5F', '9F9D9D', 179, 76, NULL, 16000, 0.443, NULL, NULL, NULL, 0),
 (6, 'University of Michigan', 'Michigan', 'Ann Arbor', 'MI', 'BIG 10', 'FCD116', '002654', 681, 179, 11, 109901, 0.736, NULL, NULL, NULL, 3),
@@ -133,7 +133,7 @@ INSERT INTO `teams` (`id`, `name`, `short_name`, `city`, `state`, `conference`, 
 (79, 'University of New Mexico', 'New Mexico', 'Albuquerque', 'NM', 'MWC', 'D30D44', 'D1D5D8', 310, 353, 0, 42000, 0.458, NULL, NULL, NULL, 0),
 (80, 'Vanderbilt University', 'Vanderbilt', 'Nashville', 'TN', 'SEC', '997F3D', '000000', 655, 321, 0, 41448, 0.496, NULL, NULL, NULL, 0),
 (81, 'California State University, Fresno', 'Fresno State', 'Fresno', 'CA', 'MWC', 'B11A3B', '00287A', 95, 292, 0, 41031, 0.594, NULL, NULL, NULL, 0),
-(82, 'University of South Alabama', 'South Alabama', 'Mobile', 'AL', 'Sun Belt', 'FF0000', 'FFFFFF', 650, 442, 0, 40646, 0, NULL, NULL, NULL, 0),
+(82, 'University of South Alabama', 'South Alabama', 'Mobile', 'AL', 'Sun Belt', 'FF0000', 'FFFFFF', 650, 442, 0, 40646, 0.852, NULL, NULL, NULL, 0),
 (83, 'Army', 'Army', 'West Point', 'NY', 'Independant', 'D4AF37', '000000', 849, 165, 3, 40000, 0.582, NULL, NULL, NULL, 3),
 (84, 'University of Connecticut', 'UCONN', 'East Hartford', 'CT', 'Big East', '002868', 'FFFFFF', 872, 153, 0, 40000, 0.489, NULL, NULL, NULL, 0),
 (85, 'Marshall University', 'Marshall', 'Huntington', 'WV', 'C-USA', '009B48', 'FFFFFF', 726, 261, 0, 38019, 0.511, NULL, NULL, NULL, 0),
