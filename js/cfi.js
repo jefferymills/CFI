@@ -2,6 +2,21 @@ var CFI = CFI || {};
 
 var category = 'attendance';
 
+var hash = window.location.hash;
+
+if(hash){
+	console.log(hash);
+	$('nav ul li').each(function(el){
+		if('#' + $(this).attr('id') === hash){
+			category = $(this).attr('id');
+			$('.map-title h2').html($(this).html());
+			window.scrollTo(0,0);
+			$('nav ul li').removeClass('current');
+   			$(this).addClass('current');
+		}
+	});
+}
+
 CFI.init = function(){
 	//CFI.addMap();
 	CFI.getDots(category, function(data){
@@ -181,7 +196,8 @@ $(document).ready(function(){
    		$(this).addClass('current');
    		$('nav ul').toggleClass('show');
    		$('.nav-button').toggleClass('hide');
-   		category = $(this).attr('id');
+   		window.location.hash = category = $(this).attr('id');
+   		window.scrollTo(0, 0);
    		CFI.getDots(category, function(data){
    			for (var i = CFI.dots.path.length - 1; i >= 0; i--) {
    				CFI.dots.path[i].remove();
