@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html itemscope itemtype="http://schema.org/Article">
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
@@ -8,7 +8,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>College Football Infographic</title>
-  <meta name="description" content="">
+  <meta name="description" content="How does your team rank in this interactive College Football Infographic">
+
+  <!-- Add the following three tags inside head. -->
+<meta itemprop="name" content="College Football Infographic">
+<meta itemprop="description" content="How does your team rank in this interactive College Football Infographic">
+<meta itemprop="image" content="http://jefferymills.com/wp-content/uploads/2012/08/cfi-shot1.jpg">
 
   <meta name="viewport" content="width=device-width">
 
