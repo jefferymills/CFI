@@ -8,8 +8,8 @@
 <meta property="fb:app_id" content="400609336659837" /> 
 <meta property="og:type"   content="object" /> 
 <meta property="og:url"    content="http://jefferymills.com/sandbox/cfi" /> 
-<meta property="og:title"  content="College Football Infographic" /> 
-<meta property="og:image"  content="http://jefferymills.com/wp-content/uploads/2012/08/cfi-shot1.jpg" /> 
+<meta property="og:title"  content="College Football Infographic" />
+<link rel="image_src" href="http://jefferymills.com/wp-content/uploads/2012/08/cfi-shot1.jpg" /> 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>College Football Infographic</title>
