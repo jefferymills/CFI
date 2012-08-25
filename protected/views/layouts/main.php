@@ -4,7 +4,7 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object#">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>College Football Infographic</title>
@@ -14,6 +14,12 @@
 <meta itemprop="name" content="College Football Infographic">
 <meta itemprop="description" content="How does your team rank in this interactive College Football Infographic">
 <meta itemprop="image" content="http://jefferymills.com/wp-content/uploads/2012/08/cfi-shot1.jpg">
+<meta property="fb:app_id" content="400609336659837" /> 
+<meta property="og:type"   content="object" /> 
+<meta property="og:url"    content="http://jefferymills.com/sandbox/cfi" /> 
+<meta property="og:title"  content="College Football Infographic" /> 
+<meta property="og:image"  content="http://jefferymills.com/wp-content/uploads/2012/08/cfi-shot1.jpg" /> 
+
 
   <meta name="viewport" content="width=device-width">
 
