@@ -17,7 +17,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'short_name'); ?>
-		<?php echo $form->textField($model,'short_name',array('size'=>6,'maxlength'=>6)); ?>
+		<?php echo $form->textField($model,'short_name',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
@@ -88,6 +88,21 @@
 	<div class="row">
 		<?php echo $form->label($model,'heismans'); ?>
 		<?php echo $form->textField($model,'heismans'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'attendance'); ?>
+		<?php echo $form->textField($model,'attendance'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'revenue'); ?>
+		<?php echo $form->textField($model,'revenue',array('size'=>19,'maxlength'=>19)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'all_americans'); ?>
+		<?php echo $form->textField($model,'all_americans'); ?>
 	</div>
 
 	<div class="row buttons">

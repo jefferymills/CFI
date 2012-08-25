@@ -35,5 +35,8 @@ $this->menu=array(
 		'top_10',
 		'top_25',
 		'heismans',
+		'attendance',
+		'revenue',
+		'all_americans',
 	),
 )); ?>

@@ -17,7 +17,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'short_name'); ?>
-		<?php echo $form->textField($model,'short_name',array('size'=>6,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'short_name',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'short_name'); ?>
 	</div>
 
@@ -103,6 +103,24 @@
 		<?php echo $form->labelEx($model,'heismans'); ?>
 		<?php echo $form->textField($model,'heismans'); ?>
 		<?php echo $form->error($model,'heismans'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'attendance'); ?>
+		<?php echo $form->textField($model,'attendance'); ?>
+		<?php echo $form->error($model,'attendance'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'revenue'); ?>
+		<?php echo $form->textField($model,'revenue',array('size'=>19,'maxlength'=>19)); ?>
+		<?php echo $form->error($model,'revenue'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'all_americans'); ?>
+		<?php echo $form->textField($model,'all_americans'); ?>
+		<?php echo $form->error($model,'all_americans'); ?>
 	</div>
 
 	<div class="row buttons">

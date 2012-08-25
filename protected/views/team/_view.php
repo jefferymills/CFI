@@ -69,6 +69,18 @@
 	<?php echo CHtml::encode($data->heismans); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('attendance')); ?>:</b>
+	<?php echo CHtml::encode($data->attendance); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('revenue')); ?>:</b>
+	<?php echo CHtml::encode($data->revenue); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('all_americans')); ?>:</b>
+	<?php echo CHtml::encode($data->all_americans); ?>
+	<br />
+
 	*/ ?>
 
 </div>

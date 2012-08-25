@@ -39,6 +39,7 @@ class SiteController extends Controller
 		$teams = Yii::app()->db->createCommand()
 	    ->select('id, conference, short_name, city, state, primary_color, second_color, x_position, y_position,' . $category .' cat')
 	    ->from('teams')
+	    ->where($category . "> 0")
 	    ->order($category . ' asc')
 	    ->queryAll();
 		//$teams=Team::model()->findAll();

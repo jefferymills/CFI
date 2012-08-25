@@ -1,6 +1,6 @@
 var CFI = CFI || {};
 
-var category = 'stadium_capacity';
+var category = 'attendance';
 
 CFI.init = function(){
 	//CFI.addMap();
@@ -64,10 +64,7 @@ CFI.getSize = function(team, teams){
 		current = team.cat,
 		least = teams[0].cat,
 		size = (((current - least)/most) * 45) + 5;
-
 	}
-
-	console.log(category);
 
 	return size;
 }
@@ -99,12 +96,17 @@ function onMouseMove(event){
 							CFI.dots.path[i].opacity = 1;
 						
 						var modalX = 15;
+						var modalY = 160;
 						if(window.mouseXPos > ($(document).width()/2) - 70){
 							modalX = -185;
 						}
+
+						if(window.mouseYPos < 150){
+							modalY = 0;
+						}
 						$('.team_modal').attr('id', 'team' + i ).css({
 							left: window.mouseXPos + modalX,
-							top: window.mouseYPos - 160,
+							top: window.mouseYPos - modalY,
 							borderBottom: '5px solid #' + CFI.dots.path[i].team.second_color
 						}).addClass('visible');
 
@@ -165,13 +167,13 @@ $(document).ready(function(){
       window.mouseYPos = e.pageY;
    }); 
 
-   $('.logo').removeClass('hide_logo');
+   $('.hide_logo').addClass('logo');
    $('.map-title').removeClass('hide-map-title');
    $('.map-container').removeClass('hide-map-container');
    $('.nav-button').click(function(){
    		$('nav ul').toggleClass('show');
    		$(this).toggleClass('hide');
-   });
+   }).removeClass('hide');
 
    $('nav ul li').click(function(){
    		$('.map-title h2').html($(this).html());

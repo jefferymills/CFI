@@ -60,6 +60,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'top_10',
 		'top_25',
 		'heismans',
+		'attendance',
+		'revenue',
+		'all_americans',
 		*/
 		array(
 			'class'=>'CButtonColumn',

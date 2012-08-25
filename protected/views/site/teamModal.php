@@ -5,7 +5,7 @@
 		<h1 class="team_name">BYU</h1>
 
 		<p class="team_location">Provo, Utah</p>
-		<p class="team_conference">Independant</p>
+		<p class="team_conference">Independent</p>
 
 	</div>
 
