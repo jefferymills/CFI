@@ -5,7 +5,6 @@ var category = 'attendance';
 var hash = window.location.hash;
 
 if(hash){
-	console.log(hash);
 	$('nav ul li').each(function(el){
 		if('#' + $(this).attr('id') === hash){
 			category = $(this).attr('id');
